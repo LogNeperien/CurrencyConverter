@@ -17,5 +17,32 @@
         android:ems="10"
         android:inputType="numberSigned|numberDecimal"
         android:text="@string/defaultString" />
+
+    <RadioGroup
+        android:id="@+id/ConvertButtons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/euro" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dollar" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+    </RadioGroup>
+
 </LinearLayout>
 
