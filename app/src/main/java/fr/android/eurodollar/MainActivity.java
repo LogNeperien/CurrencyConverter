@@ -11,8 +11,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,4 +56,44 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void myClickHandler(View view) {
+        EditText text;
+        text = (EditText) findViewById(R.id.editText1);
+        switch (view.getId()) {
+            case R.id.ConvertButtons:
+                RadioButton euroButton = (RadioButton) findViewById(R.id.radioButton2);
+                RadioButton dollarButton = (RadioButton) findViewById(R.id.radioButton);
+                if (text.getText().length() == 0) {
+                    Toast.makeText(this, "Please enter a valid number",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                float inputValue = Float.parseFloat(text.getText().toString());
+                if (euroButton.isChecked()) {
+                    text.setText(String
+                            .valueOf(convertDollarToEuro(inputValue)));
+                    euroButton.setChecked(false);
+                    dollarButton.setChecked(true);
+                } else {
+                    text.setText(String
+                            .valueOf(convertEuroToDollar(inputValue)));
+                    dollarButton.setChecked(false);
+                    euroButton.setChecked(true);
+                }
+                break;
+        }
+    }
+
+    // Convertir Dollar à Euro
+    private float convertDollarToEuro(float dollar) {
+        return (float)(dollar * 0.8951);
+    }
+
+    // Convertir Euro à Dollar
+    private float convertEuroToDollar(float euro) {
+        return (float)(euro * 1.1172);
+    }
+
 }
