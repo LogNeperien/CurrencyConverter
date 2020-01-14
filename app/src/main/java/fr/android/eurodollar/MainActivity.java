@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         EditText text;
         text = (EditText) findViewById(R.id.editText1);
         switch (view.getId()) {
-            case R.id.ConvertButtons:
+            case R.id.Convert:
                 RadioButton euroButton = (RadioButton) findViewById(R.id.radioButton2);
                 RadioButton dollarButton = (RadioButton) findViewById(R.id.radioButton);
                 if (text.getText().length() == 0) {
