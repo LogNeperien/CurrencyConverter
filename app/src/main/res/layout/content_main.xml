@@ -37,10 +37,11 @@
             android:text="@string/dollar" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/Convert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:onClick="myClickHandler"
+            android:text="@string/Convert" />
 
     </RadioGroup>
 
